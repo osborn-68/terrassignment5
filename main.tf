@@ -72,7 +72,7 @@ resource "aws_security_group" "ec2_sg" {
 # EC2 Instance with Apache2 install script
 resource "aws_instance" "apache_ec2" {
   ami                         = data.aws_ami.amazon_linux.id
-  instance_type               = "t2.micro"
+  instance_type               = "t3.micro"
   subnet_id                   = data.aws_subnet.public.id
   vpc_security_group_ids      = [aws_security_group.ec2_sg.id]
   associate_public_ip_address = true
